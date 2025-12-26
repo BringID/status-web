@@ -1,14 +1,9 @@
 'use client'
 
-import { useMemo } from 'react'
-
-import { formatEther } from 'viem/utils'
-
 import { HubLayout } from '~components/hub-layout'
 import {
   KarmaOverviewCard,
   KarmaOverviewCardSkeleton,
-  KarmaSourceCard,
   KarmaSourceCardSkeleton,
   KarmaVisualCard,
   KarmaVisualCardSkeleton,
@@ -16,6 +11,9 @@ import {
 import { useCurrentUser } from '~hooks/useCurrentUser'
 import { useKarmaRewardsDistributor } from '~hooks/useKarmaRewardsDistributor'
 import { useRequireStatusNetwork } from '~hooks/useRequireStatusNetwork'
+
+import BringIDCard from '../_components/bringid-card'
+import BringIDScoreCard from '../_components/bringid-score-card'
 
 function KarmaCardsSkeleton() {
   return (
@@ -37,12 +35,8 @@ function KarmaCardsSkeleton() {
 }
 
 function KarmaCards() {
-  const { data, isLoading, refetch } = useCurrentUser()
-  const {
-    data: rewardsData,
-    isLoading: rewardsLoading,
-    refetch: rewardsRefetch,
-  } = useKarmaRewardsDistributor()
+  const { refetch } = useCurrentUser()
+  const { refetch: rewardsRefetch } = useKarmaRewardsDistributor()
 
   // TODO: Replace with actual data from API/state
   const visualData = {
@@ -59,22 +53,6 @@ function KarmaCards() {
     },
   }
 
-  const karmaSources = useMemo(
-    () => [
-      {
-        title: 'Welcome Karma',
-        amount: formatEther(rewardsData?.balance ?? BigInt(0)),
-        onComplete: async () => {
-          refetch()
-          rewardsRefetch()
-        },
-        isComplete: data?.connectedSybilProviders.includes('POW') ?? false,
-        isLoading: rewardsLoading || isLoading,
-      },
-    ],
-    [rewardsData, data, rewardsLoading, isLoading, refetch, rewardsRefetch]
-  )
-
   return (
     <>
       <div className="flex flex-col gap-6 md:flex-row">
@@ -86,9 +64,22 @@ function KarmaCards() {
           Receive Karma
         </h2>
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {karmaSources.map(source => (
+          {/* {karmaSources.map(source => (
             <KarmaSourceCard key={source.title} {...source} />
-          ))}
+          ))} */}
+          <BringIDCard
+            onComplete={() => {
+              refetch()
+              rewardsRefetch()
+            }}
+          />
+
+          <BringIDScoreCard
+            onComplete={() => {
+              refetch()
+              rewardsRefetch()
+            }}
+          />
         </div>
       </div>
     </>

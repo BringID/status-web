@@ -4,8 +4,6 @@ import {
   type UseQueryResult,
 } from '@tanstack/react-query'
 
-import { clientEnv } from '~constants/env.client.mjs'
-
 // Query client instance for invalidation outside of React components
 let queryClientInstance: ReturnType<typeof useQueryClient> | null = null
 
@@ -28,9 +26,9 @@ export interface CurrentUser {
 /**
  * API response wrapper for current user
  */
-interface CurrentUserResponse {
-  result: CurrentUser
-}
+// interface CurrentUserResponse {
+//   result: CurrentUser
+// }
 
 /**
  * Options for the current user query hook
@@ -47,7 +45,7 @@ export interface UseCurrentUserOptions {
 // ============================================================================
 
 const QUERY_KEY_PREFIX = 'current-user' as const
-const API_ENDPOINT = `${clientEnv.NEXT_PUBLIC_STATUS_NETWORK_API_URL}/auth/me`
+// const API_ENDPOINT = `${clientEnv.NEXT_PUBLIC_STATUS_NETWORK_API_URL}/auth/me`
 const DEFAULT_REFETCH_INTERVAL = 60_000 // 60 seconds
 
 // ============================================================================
@@ -109,22 +107,28 @@ export function useCurrentUser(
     queryKey: [QUERY_KEY_PREFIX] as const,
     queryFn: async (): Promise<CurrentUser> => {
       try {
-        const response = await fetch(API_ENDPOINT, {
-          method: 'GET',
-          credentials: 'include',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        })
+        // const response = await fetch(API_ENDPOINT, {
+        //   method: 'GET',
+        //   credentials: 'include',
+        //   headers: {
+        //     'Content-Type': 'application/json',
+        //   },
+        // })
 
-        if (!response.ok) {
-          throw new Error(
-            `Failed to fetch current user: ${response.statusText}`
-          )
+        // if (!response.ok) {
+        //   throw new Error(
+        //     `Failed to fetch current user: ${response.statusText}`
+        //   )
+        // }
+
+        // const data: CurrentUserResponse = await response.json()
+        // return data.result
+
+        return {
+          address: '0x73fef8c778558c21d280e0597b60826ba083c058',
+          connectedSybilProviders: ['POW'],
+          globalPosition: 100,
         }
-
-        const data: CurrentUserResponse = await response.json()
-        return data.result
       } catch (error) {
         console.error('Failed to fetch current user:', error)
         throw error

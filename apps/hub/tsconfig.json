@@ -42,7 +42,8 @@
     "**/*.ts",
     "**/*.tsx",
     "env.d.ts",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "src/app/_components/bringid-card/styles.module.css"
   ],
   "exclude": ["node_modules", ".next"],
   "references": [

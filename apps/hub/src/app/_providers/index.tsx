@@ -11,6 +11,8 @@ import { siweConfig } from '~constants/siwe'
 import { PreDepositStateProvider } from '~hooks/usePreDepositStateContext'
 import { VaultStateProvider } from '~hooks/useVaultStateContext'
 
+import ModalProvider from './modal-provider'
+import ReduxStoreProvider from './redux-provider'
 import { VaultProvider } from './vault-provider'
 
 interface ProvidersProps {
@@ -43,25 +45,29 @@ const queryClient = new QueryClient({
  */
 export function Providers({ children }: ProvidersProps) {
   return (
-    <WagmiProvider config={wagmiConfig}>
-      <QueryClientProvider client={queryClient}>
-        <SIWEProvider {...siweConfig}>
-          <ConnectKitProvider
-            options={{
-              initialChainId: statusSepolia.id,
-            }}
-          >
-            <PreDepositStateProvider>
-              <VaultStateProvider>
-                <VaultProvider>
-                  {children}
-                  <ToastContainer />
-                </VaultProvider>
-              </VaultStateProvider>
-            </PreDepositStateProvider>
-          </ConnectKitProvider>
-        </SIWEProvider>
-      </QueryClientProvider>
-    </WagmiProvider>
+    <ReduxStoreProvider>
+      <WagmiProvider config={wagmiConfig}>
+        <QueryClientProvider client={queryClient}>
+          <SIWEProvider {...siweConfig}>
+            <ConnectKitProvider
+              options={{
+                initialChainId: statusSepolia.id,
+              }}
+            >
+              <ModalProvider>
+                <PreDepositStateProvider>
+                  <VaultStateProvider>
+                    <VaultProvider>
+                      {children}
+                      <ToastContainer />
+                    </VaultProvider>
+                  </VaultStateProvider>
+                </PreDepositStateProvider>
+              </ModalProvider>
+            </ConnectKitProvider>
+          </SIWEProvider>
+        </QueryClientProvider>
+      </WagmiProvider>
+    </ReduxStoreProvider>
   )
 }

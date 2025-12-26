@@ -9,6 +9,7 @@ import { useKarmaBalance } from '~hooks/useKarmaBalance'
 import { useProcessedKarmaTiers } from '~hooks/useProcessedKarmaTiers'
 import { formatSNT } from '~utils/currency'
 
+import { useBringID } from '../../store/reducers/bring'
 // import { AchievementBadges } from './achievement-badges'
 import { getCurrentLevelData, ProgressBar } from './progress-tracker'
 
@@ -40,14 +41,22 @@ const KarmaOverviewCardSkeleton = () => {
 
 const KarmaOverviewCard = () => {
   const { isConnected } = useAccount()
-  const { data: karmaBalance, isLoading: karmaLoading } = useKarmaBalance()
+  const {
+    // data: karmaBalance,
+    isLoading: karmaLoading,
+  } = useKarmaBalance()
   const { karmaLevels, isLoading: tiersLoading } = useProcessedKarmaTiers()
   const { isLoading: isSIWELoading } = useSIWE()
+
+  const { score, points } = useBringID()
+
+  const KARMA_UNIT = 100000000000000000n
+  const currentKarma = KARMA_UNIT * BigInt(points || 1) * BigInt(score || 1)
 
   const isLoading =
     tiersLoading || (isConnected && (karmaLoading || isSIWELoading))
 
-  const currentKarma = karmaBalance?.balance ?? 0n
+  // const currentKarma = karmaBalance?.balance ?? 0n
 
   // Ensure we have valid levels array before calculating level data
   const levelData = useMemo(
@@ -80,6 +89,7 @@ const KarmaOverviewCard = () => {
             </span>
           </div>
         </div>
+
         <ProgressBar currentKarma={currentKarma} karmaLevels={karmaLevels} />
         <div className="flex h-14 items-center gap-1 border-t border-dashed border-neutral-20 pt-3">
           {/* <span className="text-15 font-medium text-neutral-50">#</span> */}
