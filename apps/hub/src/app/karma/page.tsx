@@ -63,18 +63,22 @@ function KarmaCards() {
         <h2 className="text-19 font-semibold text-neutral-100">
           Receive Karma
         </h2>
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div
+          style={{ marginBottom: '25px' }}
+          className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3"
+        >
           {/* {karmaSources.map(source => (
             <KarmaSourceCard key={source.title} {...source} />
           ))} */}
-          <BringIDCard
+
+          <BringIDScoreCard
             onComplete={() => {
               refetch()
               rewardsRefetch()
             }}
           />
 
-          <BringIDScoreCard
+          <BringIDCard
             onComplete={() => {
               refetch()
               rewardsRefetch()

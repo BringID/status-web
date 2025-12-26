@@ -4,15 +4,17 @@ import { type FC, useState } from 'react'
 
 import { Button } from '@status-im/status-network/components'
 import { useDispatch } from 'react-redux'
+import { useAccount } from 'wagmi'
 
 import { setScore, useBringID } from '../../store/reducers/bring'
+import { ConnectButton } from '../connect-button'
 
 import type TProps from './types'
 
 const BringIDScoreCard: FC<TProps> = ({ onComplete }) => {
   const dispatch = useDispatch()
   const { score } = useBringID()
-  // const { address, chainId } = useAccount()
+  const { address } = useAccount()
   const [loading, setLoading] = useState<boolean>(false)
 
   return (
@@ -22,32 +24,36 @@ const BringIDScoreCard: FC<TProps> = ({ onComplete }) => {
           <div className="flex w-full flex-col gap-2">
             <p className="text-15 font-400 text-neutral-50">BringID</p>
             <p className="text-27 font-600">Score: {score}</p>
-            <Button
-              className="text-align-center w-full justify-center"
-              disabled={loading}
-              onClick={async () => {
-                setLoading(true)
-                // const { score, success } = await getScore(
-                //   DROP_ADDRESS,
-                //   address as string,
-                //   DROP_ADDRESS,
-                //   chainId as number
-                // )
+            {address ? (
+              <Button
+                className="text-align-center w-full justify-center"
+                disabled={loading}
+                onClick={async () => {
+                  setLoading(true)
+                  // const { score, success } = await getScore(
+                  //   DROP_ADDRESS,
+                  //   address as string,
+                  //   DROP_ADDRESS,
+                  //   chainId as number
+                  // )
 
-                // if (success) {
-                //   dispatch(setScore(score))
-                //   onComplete()
-                // }
+                  // if (success) {
+                  //   dispatch(setScore(score))
+                  //   onComplete()
+                  // }
 
-                await new Promise(resolve => setTimeout(resolve, 2000))
+                  await new Promise(resolve => setTimeout(resolve, 2000))
 
-                dispatch(setScore(Math.floor(Math.random() * 10) + 1))
-                onComplete()
-                setLoading(false)
-              }}
-            >
-              Check Score
-            </Button>
+                  dispatch(setScore(Math.floor(Math.random() * 10) + 1))
+                  onComplete()
+                  setLoading(false)
+                }}
+              >
+                Check Score
+              </Button>
+            ) : (
+              <ConnectButton size="40" />
+            )}
           </div>
         </div>
       </div>
