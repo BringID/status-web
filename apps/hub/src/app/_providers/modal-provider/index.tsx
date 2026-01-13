@@ -17,7 +17,6 @@ export default function ModalProvider({
   const { data: walletClient } = useWalletClient()
   const { address } = useAccount()
   const [signer, setSigner] = useState<null | JsonRpcSigner>()
-
   useEffect(() => {
     ;(async () => {
       if (!walletClient) {
@@ -30,6 +29,15 @@ export default function ModalProvider({
       }
     })()
   }, [walletClient, address])
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) {
+    return <Container>{children}</Container>
+  }
 
   return (
     <Container>
