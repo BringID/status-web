@@ -35,6 +35,7 @@ export default function ModalProvider({
     <Container>
       <VerificationsDialog
         address={address || undefined}
+        iframeOnLoad={() => console.log('Loaded')}
         generateSignature={
           signer
             ? async (value: string) => {
