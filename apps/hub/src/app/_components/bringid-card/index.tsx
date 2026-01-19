@@ -1,7 +1,7 @@
 'use client'
 
 import { Button } from '@status-im/status-network/components'
-import { openModal } from 'bringid-sdk'
+import { BringIDSDK } from 'bringid-sdk'
 import { useDispatch } from 'react-redux'
 import { useAccount } from 'wagmi'
 
@@ -10,6 +10,8 @@ import { ConnectButton } from '../connect-button'
 
 import type TProps from './types'
 import type { FC } from 'react'
+
+const sdk = new BringIDSDK()
 
 const BringIDCard: FC<TProps> = ({ onComplete }) => {
   const dispatch = useDispatch()
@@ -27,15 +29,14 @@ const BringIDCard: FC<TProps> = ({ onComplete }) => {
             {address ? (
               <Button
                 className="text-align-center w-full justify-center"
-                onClick={() =>
-                  openModal({
-                    proofsGeneratedCallback: (proofs, points) => {
-                      dispatch(setPoints(points))
-                      dispatch(setProofs(proofs))
-                      onComplete()
-                    },
-                  })
-                }
+                onClick={async () => {
+                  const { proofs, points } = await sdk.requestProofs({})
+
+                  dispatch(setProofs(proofs))
+                  dispatch(setPoints(points))
+
+                  onComplete()
+                }}
               >
                 Open Modal
               </Button>

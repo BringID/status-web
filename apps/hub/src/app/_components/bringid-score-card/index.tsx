@@ -6,10 +6,13 @@ import { Button } from '@status-im/status-network/components'
 import { useDispatch } from 'react-redux'
 import { useAccount } from 'wagmi'
 
+import getSDK from '../../sdk'
 import { setScore, useBringID } from '../../store/reducers/bring'
 import { ConnectButton } from '../connect-button'
 
 import type TProps from './types'
+
+const sdk = getSDK()
 
 const BringIDScoreCard: FC<TProps> = ({ onComplete }) => {
   const dispatch = useDispatch()
@@ -30,21 +33,15 @@ const BringIDScoreCard: FC<TProps> = ({ onComplete }) => {
                 disabled={loading}
                 onClick={async () => {
                   setLoading(true)
-                  // const { score, success } = await getScore(
-                  //   DROP_ADDRESS,
-                  //   address as string,
-                  //   DROP_ADDRESS,
-                  //   chainId as number
-                  // )
 
-                  // if (success) {
-                  //   dispatch(setScore(score))
-                  //   onComplete()
-                  // }
+                  const { score } = await sdk.requestScore(address)
 
-                  await new Promise(resolve => setTimeout(resolve, 2000))
+                  if (score) {
+                    dispatch(setScore(score))
+                    onComplete()
+                  }
 
-                  dispatch(setScore(Math.floor(Math.random() * 10) + 1))
+                  // dispatch(setScore(Math.floor(Math.random() * 10) + 1))
                   onComplete()
                   setLoading(false)
                 }}

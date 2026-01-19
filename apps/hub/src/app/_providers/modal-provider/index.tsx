@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react'
 
-import { VerificationsDialog } from 'bringid-sdk'
+import { BringIDModal } from 'bringid-sdk'
 import { useAccount, useWalletClient } from 'wagmi'
 
 import defineEthersSigner from '../../_utils/define-ethers-provider'
@@ -41,7 +41,7 @@ export default function ModalProvider({
 
   return (
     <Container>
-      <VerificationsDialog
+      <BringIDModal
         address={address || undefined}
         iframeOnLoad={() => console.log('Loaded')}
         mode="dev"
