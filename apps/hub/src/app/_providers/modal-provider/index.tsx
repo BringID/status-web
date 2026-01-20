@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react'
 
-import { BringIDModal } from 'bringid-sdk'
+import { BringIDModal } from 'bringid'
 import { useAccount, useWalletClient } from 'wagmi'
 
 import defineEthersSigner from '../../_utils/define-ethers-provider'
@@ -29,15 +29,6 @@ export default function ModalProvider({
       }
     })()
   }, [walletClient, address])
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  if (!mounted) {
-    return <Container>{children}</Container>
-  }
 
   return (
     <Container>

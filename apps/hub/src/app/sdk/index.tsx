@@ -1,11 +1,11 @@
-import { BringIDSDK } from 'bringid-sdk'
+import { BringID } from 'bringid'
 
 const getSDK = (() => {
-  let sdk: null | BringIDSDK = null
+  let sdk: null | BringID = null
 
   return () => {
     if (!sdk) {
-      const newSDK = new BringIDSDK()
+      const newSDK = new BringID()
       sdk = newSDK
 
       return sdk

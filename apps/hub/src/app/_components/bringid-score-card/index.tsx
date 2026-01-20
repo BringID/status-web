@@ -34,7 +34,7 @@ const BringIDScoreCard: FC<TProps> = ({ onComplete }) => {
                 onClick={async () => {
                   setLoading(true)
 
-                  const { score } = await sdk.requestScore(address)
+                  const { score } = await sdk.getAddressScore(address)
 
                   if (score) {
                     dispatch(setScore(score))
