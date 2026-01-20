@@ -30,7 +30,7 @@ const BringIDCard: FC<TProps> = ({ onComplete }) => {
               <Button
                 className="text-align-center w-full justify-center"
                 onClick={async () => {
-                  const { proofs, points } = await sdk.requestProofs({})
+                  const { proofs, points } = await sdk.verifyHumanity()
 
                   dispatch(setProofs(proofs))
                   dispatch(setPoints(points))
