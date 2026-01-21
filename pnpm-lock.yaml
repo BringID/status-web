@@ -314,8 +314,8 @@ importers:
         specifier: ^1.5.0
         version: 1.5.0(next@15.3.8(@babel/core@7.28.5)(@opentelemetry/api@1.9.0)(react-dom@19.1.2(react@19.1.2))(react@19.1.2)(sass@1.94.0))(react@19.1.2)(svelte@4.2.2)(vue@3.3.4)
       bringid:
-        specifier: 0.0.19-rc.23
-        version: 0.0.19-rc.23(@coinbase/wallet-sdk@4.3.0)(@types/react-dom@19.1.2(@types/react@19.1.2))(@types/react@19.1.2)(@types/snarkjs@0.7.9)(bufferutil@4.0.9)(commander@13.1.0)(react-dom@19.1.2(react@19.1.2))(react@19.1.2)(utf-8-validate@5.0.10)
+        specifier: 0.1.0-beta
+        version: 0.1.0-beta(@coinbase/wallet-sdk@4.3.0)(@types/react-dom@19.1.2(@types/react@19.1.2))(@types/react@19.1.2)(@types/snarkjs@0.7.9)(bufferutil@4.0.9)(commander@13.1.0)(react-dom@19.1.2(react@19.1.2))(react@19.1.2)(utf-8-validate@5.0.10)
       connectkit:
         specifier: ^1.9.0
         version: 1.9.1(@babel/core@7.28.5)(@tanstack/react-query@5.90.7(react@19.1.2))(react-dom@19.1.2(react@19.1.2))(react-is@18.3.1)(react@19.1.2)(viem@2.39.0(bufferutil@4.0.9)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@3.25.76))(wagmi@2.15.2(@tanstack/query-core@5.90.7)(@tanstack/react-query@5.90.7(react@19.1.2))(@types/react@19.1.2)(bufferutil@4.0.9)(react@19.1.2)(typescript@5.9.3)(utf-8-validate@5.0.10)(viem@2.39.0(bufferutil@4.0.9)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@3.25.76))(zod@3.25.76))
@@ -10660,8 +10660,8 @@ packages:
     resolution: {integrity: sha512-yQbXgO/OSZVD2IsiLlro+7Hf6Q18EJrKSEsdoMzKePKXct3gvD8oLcOQdIzGupr5Fj+EDe8gO/lxc1BzfMpxvA==}
     engines: {node: '>=8'}
 
-  bringid@0.0.19-rc.23:
-    resolution: {integrity: sha512-cddQDzYbFrlCgDUe+ihSgajTDW+m3gdDnF9heSGPHksML24U9OCqV3qeDU6+RG16TrbC08RYnjOCUssgVmcNyw==}
+  bringid@0.1.0-beta:
+    resolution: {integrity: sha512-jH2eh2SV/ApA/ljYGvGwesFm3bkoYpxhUElK6VBsUD6b1mxYB0nTYza/YczxJHoIXadY9Wb7MPZoQVAbGT3+1w==}
     engines: {node: '>=16.x'}
     peerDependencies:
       '@coinbase/wallet-sdk': ^4.3.7
@@ -31216,7 +31216,7 @@ snapshots:
     dependencies:
       fill-range: 7.1.1
 
-  bringid@0.0.19-rc.23(@coinbase/wallet-sdk@4.3.0)(@types/react-dom@19.1.2(@types/react@19.1.2))(@types/react@19.1.2)(@types/snarkjs@0.7.9)(bufferutil@4.0.9)(commander@13.1.0)(react-dom@19.1.2(react@19.1.2))(react@19.1.2)(utf-8-validate@5.0.10):
+  bringid@0.1.0-beta(@coinbase/wallet-sdk@4.3.0)(@types/react-dom@19.1.2(@types/react@19.1.2))(@types/react@19.1.2)(@types/snarkjs@0.7.9)(bufferutil@4.0.9)(commander@13.1.0)(react-dom@19.1.2(react@19.1.2))(react@19.1.2)(utf-8-validate@5.0.10):
     dependencies:
       '@coinbase/wallet-sdk': 4.3.0
       '@semaphore-protocol/core': 4.14.1(@types/snarkjs@0.7.9)(bufferutil@4.0.9)(commander@13.1.0)(utf-8-validate@5.0.10)
