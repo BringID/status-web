@@ -34,6 +34,7 @@ export default function ModalProvider({
     <Container>
       <BringIDModal
         address={address || undefined}
+        highlightColor="#6B43F4"
         iframeOnLoad={() => console.log('Loaded')}
         mode="dev"
         generateSignature={
