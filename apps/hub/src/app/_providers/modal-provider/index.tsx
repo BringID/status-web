@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react'
 
-import { BringIDModal } from 'bringid'
+import { BringIDModal } from 'bringid/react'
 import { useAccount, useWalletClient } from 'wagmi'
 
 import defineEthersSigner from '../../_utils/define-ethers-provider'
