@@ -28,7 +28,7 @@ export default function ModalProvider({
         setSigner(signer)
       }
     })()
-  }, [walletClient, address])
+  }, [address, walletClient])
 
   return (
     <Container>
