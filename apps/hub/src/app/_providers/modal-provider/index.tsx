@@ -38,7 +38,7 @@ export default function ModalProvider({
         connectUrl="https://staging.widget.bringid.org"
         iframeOnLoad={() => console.log('Loaded')}
         customTitles={{
-          scoreTitle: 'Karma Score',
+          scoreTitle: 'Karma',
           pointsTitle: 'karma',
           pointsShortTitle: 'karma',
         }}
