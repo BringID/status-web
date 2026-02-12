@@ -36,7 +36,6 @@ export default function ModalProvider({
         address={address || undefined}
         highlightColor="#6B43F4"
         iframeOnLoad={() => console.log('Loaded')}
-        mode="dev"
         generateSignature={
           signer
             ? async (value: string) => {

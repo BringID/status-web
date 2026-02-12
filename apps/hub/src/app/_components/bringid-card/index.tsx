@@ -1,17 +1,17 @@
 'use client'
 
 import { Button } from '@status-im/status-network/components'
-import { BringID } from 'bringid'
 import { useDispatch } from 'react-redux'
 import { useAccount } from 'wagmi'
 
+import getSDK from '../../sdk'
 import { setPoints, setProofs, useBringID } from '../../store/reducers/bring'
 import { ConnectButton } from '../connect-button'
 
 import type TProps from './types'
 import type { FC } from 'react'
 
-const sdk = new BringID()
+const sdk = getSDK()
 
 const BringIDCard: FC<TProps> = ({ onComplete }) => {
   const dispatch = useDispatch()

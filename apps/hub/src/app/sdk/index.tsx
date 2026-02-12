@@ -5,7 +5,10 @@ const getSDK = (() => {
 
   return () => {
     if (!sdk) {
-      const newSDK = new BringID()
+      const newSDK = new BringID({
+        appId: '1',
+        mode: 'dev',
+      })
       sdk = newSDK
 
       return sdk
