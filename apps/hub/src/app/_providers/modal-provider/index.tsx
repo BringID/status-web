@@ -37,6 +37,11 @@ export default function ModalProvider({
         highlightColor="#6B43F4"
         connectUrl="https://staging.widget.bringid.org"
         iframeOnLoad={() => console.log('Loaded')}
+        customTitles={{
+          scoreTitle: 'Karma Score',
+          pointsTitle: 'karma',
+          pointsShortTitle: 'karma',
+        }}
         generateSignature={
           signer
             ? async (value: string) => {

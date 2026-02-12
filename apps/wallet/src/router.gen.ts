@@ -80,9 +80,9 @@ export interface FileRoutesByFullPath {
   '/onboarding/new': typeof OnboardingNewRoute
   '/onboarding/': typeof OnboardingIndexRoute
   '/portfolio/assets/$ticker': typeof PortfolioAssetsTickerRoute
-  '/portfolio/activity': typeof PortfolioActivityIndexRoute
-  '/portfolio/assets': typeof PortfolioAssetsIndexRoute
-  '/portfolio/collectibles': typeof PortfolioCollectiblesIndexRoute
+  '/portfolio/activity/': typeof PortfolioActivityIndexRoute
+  '/portfolio/assets/': typeof PortfolioAssetsIndexRoute
+  '/portfolio/collectibles/': typeof PortfolioCollectiblesIndexRoute
   '/portfolio/collectibles/$network/$contract/$id': typeof PortfolioCollectiblesNetworkContractIdRoute
 }
 export interface FileRoutesByTo {
@@ -118,9 +118,9 @@ export interface FileRouteTypes {
     | '/onboarding/new'
     | '/onboarding/'
     | '/portfolio/assets/$ticker'
-    | '/portfolio/activity'
-    | '/portfolio/assets'
-    | '/portfolio/collectibles'
+    | '/portfolio/activity/'
+    | '/portfolio/assets/'
+    | '/portfolio/collectibles/'
     | '/portfolio/collectibles/$network/$contract/$id'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -197,21 +197,21 @@ declare module '@tanstack/react-router' {
     '/portfolio/collectibles/': {
       id: '/portfolio/collectibles/'
       path: '/portfolio/collectibles'
-      fullPath: '/portfolio/collectibles'
+      fullPath: '/portfolio/collectibles/'
       preLoaderRoute: typeof PortfolioCollectiblesIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/portfolio/assets/': {
       id: '/portfolio/assets/'
       path: '/portfolio/assets'
-      fullPath: '/portfolio/assets'
+      fullPath: '/portfolio/assets/'
       preLoaderRoute: typeof PortfolioAssetsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/portfolio/activity/': {
       id: '/portfolio/activity/'
       path: '/portfolio/activity'
-      fullPath: '/portfolio/activity'
+      fullPath: '/portfolio/activity/'
       preLoaderRoute: typeof PortfolioActivityIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
