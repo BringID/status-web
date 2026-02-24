@@ -35,7 +35,6 @@ export default function ModalProvider({
       <BringIDModal
         address={address || undefined}
         highlightColor="#6B43F4"
-        connectUrl="https://staging.widget.bringid.org"
         iframeOnLoad={() => console.log('Loaded')}
         customTitles={{
           scoreTitle: 'Karma',

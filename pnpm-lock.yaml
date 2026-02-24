@@ -314,8 +314,8 @@ importers:
         specifier: ^1.5.0
         version: 1.6.1(next@15.3.8(@babel/core@7.29.0)(@opentelemetry/api@1.9.0)(react-dom@19.1.2(react@19.1.2))(react@19.1.2)(sass@1.97.3))(react@19.1.2)(svelte@4.2.2)(vue@3.3.4)
       bringid:
-        specifier: 0.4.0-beta-rc.3
-        version: 0.4.0-beta-rc.3(@coinbase/wallet-sdk@4.3.0)(@types/react-dom@19.1.2(@types/react@19.1.2))(@types/react@19.1.2)(@types/snarkjs@0.7.9)(bufferutil@4.1.0)(commander@13.1.0)(react-dom@19.1.2(react@19.1.2))(react@19.1.2)(utf-8-validate@5.0.10)
+        specifier: 0.5.1-beta
+        version: 0.5.1-beta(@coinbase/wallet-sdk@4.3.0)(@types/react-dom@19.1.2(@types/react@19.1.2))(@types/react@19.1.2)(@types/snarkjs@0.7.9)(bufferutil@4.1.0)(commander@13.1.0)(react-dom@19.1.2(react@19.1.2))(react@19.1.2)(utf-8-validate@5.0.10)
       connectkit:
         specifier: ^1.9.0
         version: 1.9.1(@babel/core@7.29.0)(@tanstack/react-query@5.90.21(react@19.1.2))(react-dom@19.1.2(react@19.1.2))(react-is@18.3.1)(react@19.1.2)(viem@2.45.3(bufferutil@4.1.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@3.25.76))(wagmi@2.15.2(@tanstack/query-core@5.90.20)(@tanstack/react-query@5.90.21(react@19.1.2))(@types/react@19.1.2)(bufferutil@4.1.0)(react@19.1.2)(typescript@5.9.3)(utf-8-validate@5.0.10)(viem@2.45.3(bufferutil@4.1.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@3.25.76))(zod@3.25.76))
@@ -10929,8 +10929,8 @@ packages:
     resolution: {integrity: sha512-yQbXgO/OSZVD2IsiLlro+7Hf6Q18EJrKSEsdoMzKePKXct3gvD8oLcOQdIzGupr5Fj+EDe8gO/lxc1BzfMpxvA==}
     engines: {node: '>=8'}
 
-  bringid@0.4.0-beta-rc.3:
-    resolution: {integrity: sha512-Jf/kl0G8z7rIfxuhEaLX671LfIDMwa9fMvj+ZK449vHr0vHM9Q15zFPGYjradCF9LRDfGAl7qI2vgBRoU5QIRQ==}
+  bringid@0.5.1-beta:
+    resolution: {integrity: sha512-X11saCDph15hp/aFjWrw8ikUCjM4Meuh137oeq8KX2UWA0QCU7MEbrxkV/X+N4M9tHcL7Rd9N812nhqsUXmpVA==}
     engines: {node: '>=16.x'}
     peerDependencies:
       '@coinbase/wallet-sdk': ^4.3.7
@@ -19613,10 +19613,6 @@ packages:
     resolution: {integrity: sha512-6Z7Ma2aVEWisaL6TvBCy7P8rm2LQoPv6dJ7ecIaIixHcwfbJ0x7mWdbcwlIM5IGQxPZSFYeqRCqlOOeKoJYMkw==}
     engines: {node: '>= 4'}
 
-  uuid@13.0.0:
-    resolution: {integrity: sha512-XQegIaBTVUjSHliKqcnFqYypAd4S+WCYt5NIeRs6w/UAry7z8Y9j5ZwRRL4kzq9U3sD6v+85er9FvkEaBpji2w==}
-    hasBin: true
-
   uuid@8.3.2:
     resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
     hasBin: true
@@ -22546,12 +22542,12 @@ snapshots:
   '@graphql-tools/optimize@1.4.0(graphql@16.12.0)':
     dependencies:
       graphql: 16.12.0
-      tslib: 2.6.3
+      tslib: 2.8.1
 
   '@graphql-tools/optimize@2.0.0(graphql@16.12.0)':
     dependencies:
       graphql: 16.12.0
-      tslib: 2.6.3
+      tslib: 2.8.1
 
   '@graphql-tools/prisma-loader@8.0.17(@types/node@22.19.11)(bufferutil@4.0.8)(crossws@0.3.5)(graphql@16.12.0)(utf-8-validate@6.0.3)':
     dependencies:
@@ -22614,7 +22610,7 @@ snapshots:
       '@ardatan/relay-compiler': 12.0.0(graphql@16.12.0)
       '@graphql-tools/utils': 9.2.1(graphql@16.12.0)
       graphql: 16.12.0
-      tslib: 2.6.3
+      tslib: 2.8.1
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -22624,7 +22620,7 @@ snapshots:
       '@ardatan/relay-compiler': 12.0.3(graphql@16.12.0)
       '@graphql-tools/utils': 11.0.0(graphql@16.12.0)
       graphql: 16.12.0
-      tslib: 2.6.3
+      tslib: 2.8.1
     transitivePeerDependencies:
       - encoding
 
@@ -22698,13 +22694,13 @@ snapshots:
   '@graphql-tools/utils@8.13.1(graphql@16.12.0)':
     dependencies:
       graphql: 16.12.0
-      tslib: 2.6.3
+      tslib: 2.8.1
 
   '@graphql-tools/utils@9.2.1(graphql@16.12.0)':
     dependencies:
       '@graphql-typed-document-node/core': 3.2.0(graphql@16.12.0)
       graphql: 16.12.0
-      tslib: 2.6.3
+      tslib: 2.8.1
 
   '@graphql-tools/wrap@10.1.4(graphql@16.12.0)':
     dependencies:
@@ -29347,7 +29343,7 @@ snapshots:
 
   '@types/concat-stream@2.0.3':
     dependencies:
-      '@types/node': 22.19.11
+      '@types/node': 20.11.5
 
   '@types/d3-array@3.0.3': {}
 
@@ -29531,7 +29527,7 @@ snapshots:
 
   '@types/pg@8.6.6':
     dependencies:
-      '@types/node': 22.19.11
+      '@types/node': 20.11.5
       pg-protocol: 1.11.0
       pg-types: 2.2.0
 
@@ -32322,7 +32318,7 @@ snapshots:
     dependencies:
       fill-range: 7.1.1
 
-  bringid@0.4.0-beta-rc.3(@coinbase/wallet-sdk@4.3.0)(@types/react-dom@19.1.2(@types/react@19.1.2))(@types/react@19.1.2)(@types/snarkjs@0.7.9)(bufferutil@4.1.0)(commander@13.1.0)(react-dom@19.1.2(react@19.1.2))(react@19.1.2)(utf-8-validate@5.0.10):
+  bringid@0.5.1-beta(@coinbase/wallet-sdk@4.3.0)(@types/react-dom@19.1.2(@types/react@19.1.2))(@types/react@19.1.2)(@types/snarkjs@0.7.9)(bufferutil@4.1.0)(commander@13.1.0)(react-dom@19.1.2(react@19.1.2))(react@19.1.2)(utf-8-validate@5.0.10):
     dependencies:
       '@coinbase/wallet-sdk': 4.3.0
       '@semaphore-protocol/core': 4.14.2(@types/snarkjs@0.7.9)(bufferutil@4.1.0)(commander@13.1.0)(utf-8-validate@5.0.10)
@@ -32334,7 +32330,6 @@ snapshots:
       redux-logger: 3.0.6
       redux-thunk: 2.4.2(redux@4.2.1)
       styled-components: 6.3.9(react-dom@19.1.2(react@19.1.2))(react@19.1.2)
-      uuid: 13.0.0
     transitivePeerDependencies:
       - '@types/react'
       - '@types/react-dom'
@@ -32566,7 +32561,7 @@ snapshots:
   capital-case@1.0.4:
     dependencies:
       no-case: 3.0.4
-      tslib: 2.6.3
+      tslib: 2.8.1
       upper-case-first: 2.0.2
 
   capture-stack-trace@1.0.2: {}
@@ -32670,7 +32665,7 @@ snapshots:
       path-case: 3.0.4
       sentence-case: 3.0.4
       snake-case: 3.0.4
-      tslib: 2.6.3
+      tslib: 2.8.1
 
   change-case@5.1.2: {}
 
@@ -33026,7 +33021,7 @@ snapshots:
   constant-case@3.0.4:
     dependencies:
       no-case: 3.0.4
-      tslib: 2.6.3
+      tslib: 2.8.1
       upper-case: 2.0.2
 
   constants-browserify@1.0.0: {}
@@ -35556,7 +35551,7 @@ snapshots:
   graphql-tag@2.12.6(graphql@16.12.0):
     dependencies:
       graphql: 16.12.0
-      tslib: 2.6.3
+      tslib: 2.8.1
 
   graphql-ws@6.0.7(crossws@0.3.5)(graphql@16.12.0)(ws@8.19.0(bufferutil@4.0.8)(utf-8-validate@6.0.3)):
     dependencies:
@@ -35892,7 +35887,7 @@ snapshots:
   header-case@2.0.4:
     dependencies:
       capital-case: 1.0.4
-      tslib: 2.6.3
+      tslib: 2.8.1
 
   help-me@5.0.0: {}
 
@@ -36351,7 +36346,7 @@ snapshots:
 
   is-lower-case@2.0.2:
     dependencies:
-      tslib: 2.6.3
+      tslib: 2.8.1
 
   is-map@2.0.3: {}
 
@@ -36463,7 +36458,7 @@ snapshots:
 
   is-upper-case@2.0.2:
     dependencies:
-      tslib: 2.6.3
+      tslib: 2.8.1
 
   is-weakmap@2.0.2: {}
 
@@ -37262,11 +37257,11 @@ snapshots:
 
   lower-case-first@2.0.2:
     dependencies:
-      tslib: 2.6.3
+      tslib: 2.8.1
 
   lower-case@2.0.2:
     dependencies:
-      tslib: 2.6.3
+      tslib: 2.8.1
 
   lowercase-keys@1.0.1: {}
 
@@ -39263,10 +39258,10 @@ snapshots:
   ox@0.6.7(typescript@5.9.3)(zod@3.25.76):
     dependencies:
       '@adraffy/ens-normalize': 1.11.1
-      '@noble/curves': 1.8.1
-      '@noble/hashes': 1.7.1
-      '@scure/bip32': 1.6.2
-      '@scure/bip39': 1.5.4
+      '@noble/curves': 1.9.7
+      '@noble/hashes': 1.8.0
+      '@scure/bip32': 1.7.0
+      '@scure/bip39': 1.6.0
       abitype: 1.0.8(typescript@5.9.3)(zod@3.25.76)
       eventemitter3: 5.0.1
     optionalDependencies:
@@ -39402,7 +39397,7 @@ snapshots:
   param-case@3.0.4:
     dependencies:
       dot-case: 3.0.4
-      tslib: 2.6.3
+      tslib: 2.8.1
 
   parent-module@1.0.1:
     dependencies:
@@ -39513,7 +39508,7 @@ snapshots:
   path-case@3.0.4:
     dependencies:
       dot-case: 3.0.4
-      tslib: 2.6.3
+      tslib: 2.8.1
 
   path-exists@3.0.0: {}
 
@@ -40011,7 +40006,7 @@ snapshots:
       '@protobufjs/path': 1.1.2
       '@protobufjs/pool': 1.1.0
       '@protobufjs/utf8': 1.1.0
-      '@types/node': 22.19.11
+      '@types/node': 20.11.5
       long: 5.3.2
 
   protobufjs@8.0.0:
@@ -42996,7 +42991,7 @@ snapshots:
   sentence-case@3.0.4:
     dependencies:
       no-case: 3.0.4
-      tslib: 2.6.3
+      tslib: 2.8.1
       upper-case-first: 2.0.2
 
   serialize-error@7.0.1:
@@ -43377,7 +43372,7 @@ snapshots:
 
   sponge-case@1.0.1:
     dependencies:
-      tslib: 2.6.3
+      tslib: 2.8.1
 
   sprintf-js@1.0.3: {}
 
@@ -43742,7 +43737,7 @@ snapshots:
 
   swap-case@2.0.2:
     dependencies:
-      tslib: 2.6.3
+      tslib: 2.8.1
 
   sync-fetch@0.6.0:
     dependencies:
@@ -43932,7 +43927,7 @@ snapshots:
 
   title-case@3.0.3:
     dependencies:
-      tslib: 2.6.3
+      tslib: 2.8.1
 
   title@3.5.3:
     dependencies:
@@ -44662,11 +44657,11 @@ snapshots:
 
   upper-case-first@2.0.2:
     dependencies:
-      tslib: 2.6.3
+      tslib: 2.8.1
 
   upper-case@2.0.2:
     dependencies:
-      tslib: 2.6.3
+      tslib: 2.8.1
 
   uri-js@4.4.1:
     dependencies:
@@ -44739,8 +44734,6 @@ snapshots:
       which-typed-array: 1.1.20
 
   utility-types@3.11.0: {}
-
-  uuid@13.0.0: {}
 
   uuid@8.3.2: {}
 
